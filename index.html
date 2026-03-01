@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PowerReps — Politique de confidentialité / Privacy Policy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Barlow+Condensed:wght@400;700;900&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --bg:       #080812;
+      --card:     #0f0f1e;
+      --card2:    #13132a;
+      --border:   #1a1a32;
+      --accent:   #f97316;
+      --accent-lt:#fb923c;
+      --cyan:     #22d3ee;
+      --green:    #4ade80;
+      --purple:   #a78bfa;
+      --text:     #f1f5f9;
+      --muted:    #4a5568;
+      --muted2:   #718096;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Space Mono', monospace;
+      font-size: 14px;
+      line-height: 1.75;
+      min-height: 100vh;
+    }
+
+    /* ── noise texture overlay ── */
+    body::before {
+      content: "";
+      position: fixed; inset: 0; z-index: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+      pointer-events: none;
+    }
+
+    .wrap {
+      position: relative; z-index: 1;
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    /* ── header ── */
+    header {
+      border-bottom: 2px solid var(--accent);
+      padding-bottom: 32px;
+      margin-bottom: 40px;
+    }
+
+    .logo {
+      display: inline-flex;
+      align-items: baseline;
+      gap: 2px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 42px;
+      font-weight: 900;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      line-height: 1;
+    }
+    .logo span { color: var(--accent); }
+
+    .tagline {
+      font-size: 10px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--muted2);
+      margin-top: 4px;
+    }
+
+    /* ── lang toggle ── */
+    .lang-toggle {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+    }
+    .lang-btn {
+      background: var(--card2);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 5px 16px;
+      color: var(--muted2);
+      font-family: 'Space Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 2px;
+      cursor: pointer;
+      transition: all .2s;
+      text-transform: uppercase;
+    }
+    .lang-btn.active,
+    .lang-btn:hover {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #fff;
+    }
+
+    /* ── sections ── */
+    .doc { display: none; }
+    .doc.active { display: block; }
+
+    .updated {
+      display: inline-block;
+      background: var(--card2);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 4px 14px;
+      font-size: 10px;
+      letter-spacing: 2px;
+      color: var(--muted2);
+      text-transform: uppercase;
+      margin-bottom: 36px;
+    }
+
+    h1 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 28px;
+      font-weight: 900;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+
+    h2 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--cyan);
+      margin-top: 40px;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    h2::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    p {
+      color: var(--muted2);
+      margin-bottom: 14px;
+    }
+
+    strong { color: var(--text); font-weight: 700; }
+
+    ul {
+      list-style: none;
+      margin-bottom: 14px;
+    }
+    ul li {
+      color: var(--muted2);
+      padding: 6px 0 6px 20px;
+      border-bottom: 1px solid var(--border);
+      position: relative;
+    }
+    ul li::before {
+      content: "—";
+      color: var(--accent);
+      position: absolute;
+      left: 0;
+    }
+    ul li:last-child { border-bottom: none; }
+
+    /* ── highlight box ── */
+    .highlight {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--green);
+      border-radius: 12px;
+      padding: 18px 20px;
+      margin: 20px 0;
+    }
+    .highlight.warn {
+      border-left-color: var(--accent);
+    }
+
+    .highlight p { margin-bottom: 6px; }
+    .highlight p:last-child { margin-bottom: 0; }
+
+    /* ── data table ── */
+    .table-wrap {
+      overflow-x: auto;
+      margin: 16px 0 24px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12px;
+    }
+    th {
+      background: var(--card2);
+      color: var(--muted2);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 10px;
+      padding: 10px 16px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+    td {
+      color: var(--muted2);
+      padding: 10px 16px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    tr:last-child td { border-bottom: none; }
+    tr:hover td { background: var(--card2); }
+    td strong { color: var(--text); }
+
+    /* ── pill badge ── */
+    .pill {
+      display: inline-block;
+      background: var(--green);
+      color: #000;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      border-radius: 20px;
+      padding: 2px 8px;
+      vertical-align: middle;
+    }
+    .pill.local { background: var(--accent); }
+    .pill.none  { background: var(--muted); }
+
+    /* ── contact ── */
+    .contact-box {
+      margin-top: 48px;
+      background: var(--card);
+      border: 1px solid var(--accent);
+      border-radius: 16px;
+      padding: 24px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .contact-icon { font-size: 32px; flex-shrink: 0; }
+    .contact-box a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 700;
+    }
+    .contact-box a:hover { text-decoration: underline; }
+
+    /* ── footer ── */
+    footer {
+      margin-top: 60px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    @media (max-width: 480px) {
+      .logo { font-size: 30px; }
+      h1 { font-size: 22px; }
+      td, th { padding: 8px 10px; font-size: 11px; }
+    }
+  </style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="logo">POWER<span>REPS</span></div>
+    <div class="tagline">Infinite challenge · Configurable cycles</div>
+    <div class="lang-toggle">
+      <button class="lang-btn active" onclick="setLang('fr')">🇫🇷 Français</button>
+      <button class="lang-btn"        onclick="setLang('en')">🇬🇧 English</button>
+    </div>
+  </header>
+
+  <!-- ══════════════════════════════════════════════════════ FRANÇAIS -->
+  <div class="doc active" id="doc-fr">
+    <span class="updated">Dernière mise à jour : 1 mars 2026</span>
+    <h1>Politique de confidentialité</h1>
+
+    <div class="highlight">
+      <p><strong>Résumé en une phrase :</strong> PowerReps ne collecte, ne transmet et ne partage aucune donnée personnelle. Tout reste sur votre appareil.</p>
+    </div>
+
+    <p>La présente politique décrit comment PowerReps traite vos données. En utilisant l'application, vous acceptez les pratiques décrites ci-dessous.</p>
+
+    <h2>1. Données collectées</h2>
+    <p>PowerReps est une application <strong>entièrement hors ligne</strong>. Elle ne crée aucun compte, ne nécessite aucune connexion internet et n'envoie aucune donnée à un serveur externe.</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Type de donnée</th>
+            <th>Stockage</th>
+            <th>Transmission</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Cycles et exercices configurés</strong></td>
+            <td><span class="pill local">Local</span> AsyncStorage</td>
+            <td><span class="pill none">Aucune</span></td>
+          </tr>
+          <tr>
+            <td><strong>Progression quotidienne (reps)</strong></td>
+            <td><span class="pill local">Local</span> AsyncStorage</td>
+            <td><span class="pill none">Aucune</span></td>
+          </tr>
+          <tr>
+            <td><strong>Préférences (langue, paramètres)</strong></td>
+            <td><span class="pill local">Local</span> AsyncStorage</td>
+            <td><span class="pill none">Aucune</span></td>
+          </tr>
+          <tr>
+            <td><strong>Données de localisation</strong></td>
+            <td colspan="2" style="color:var(--green)">Non collectées</td>
+          </tr>
+          <tr>
+            <td><strong>Identifiants publicitaires</strong></td>
+            <td colspan="2" style="color:var(--green)">Non collectés</td>
+          </tr>
+          <tr>
+            <td><strong>Données de compte / email</strong></td>
+            <td colspan="2" style="color:var(--green)">Non collectés</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>2. Utilisation des données</h2>
+    <p>Les données stockées localement sont utilisées exclusivement pour :</p>
+    <ul>
+      <li>Afficher votre progression et votre historique dans l'application</li>
+      <li>Mémoriser vos cycles, dossiers et exercices entre les sessions</li>
+      <li>Conserver vos préférences de langue et de configuration</li>
+    </ul>
+
+    <div class="highlight">
+      <p>📵 L'application <strong>ne nécessite pas de connexion internet</strong> pour fonctionner. Aucune donnée n'est envoyée à nos serveurs — nous n'en avons pas.</p>
+    </div>
+
+    <h2>3. Services tiers</h2>
+    <p>PowerReps n'intègre <strong>aucun service tiers</strong> de publicité, d'analyse, d'authentification ou de synchronisation cloud. Il n'existe aucune dépendance à Google Firebase, AdMob, Analytics ou tout autre service de collecte de données.</p>
+
+    <h2>4. Sécurité et stockage</h2>
+    <p>Toutes vos données sont stockées dans le stockage local sécurisé de votre appareil via <code>AsyncStorage</code>, la bibliothèque de persistance standard de React Native. L'application n'accède à aucune autre ressource de votre téléphone (caméra, contacts, microphone, géolocalisation).</p>
+
+    <div class="highlight warn">
+      <p><strong>Important :</strong> La désinstallation de l'application entraîne la suppression définitive de toutes vos données. Nous vous recommandons d'effectuer une sauvegarde avant toute réinstallation.</p>
+    </div>
+
+    <h2>5. Vos droits (RGPD)</h2>
+    <p>Conformément au Règlement Général sur la Protection des Données (RGPD), vous disposez d'un contrôle total sur vos données :</p>
+    <ul>
+      <li><strong>Accès :</strong> toutes vos données sont visibles directement dans l'application</li>
+      <li><strong>Effacement :</strong> désinstaller l'application supprime toutes les données</li>
+      <li><strong>Portabilité :</strong> les données sont dans un format JSON standard sur votre appareil</li>
+    </ul>
+    <p>Étant donné qu'aucune donnée n'est transmise à nos serveurs, il n'est pas possible pour nous d'accéder à vos informations ni de les modifier depuis l'extérieur.</p>
+
+    <h2>6. Mineurs</h2>
+    <p>PowerReps ne collectant aucune donnée personnelle, l'application est utilisable par des personnes de tout âge sans risque lié à la protection des données.</p>
+
+    <h2>7. Modifications</h2>
+    <p>Cette politique peut être mise à jour occasionnellement. La date de dernière mise à jour figure en haut de cette page. Toute modification sera communiquée via la page de mise à jour de l'application.</p>
+
+    <div class="contact-box">
+      <div class="contact-icon">✉️</div>
+      <div>
+        <p><strong>Contact</strong></p>
+        <p style="margin:0;color:var(--muted2)">Pour toute question relative à cette politique :<br>
+        <a href="mailto:happyjoy81.dev@gmail.com">happyjoy81.dev@gmail.com</a></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════ ENGLISH -->
+  <div class="doc" id="doc-en">
+    <span class="updated">Last updated: March 1, 2026</span>
+    <h1>Privacy Policy</h1>
+
+    <div class="highlight">
+      <p><strong>One-sentence summary:</strong> PowerReps collects, transmits and shares no personal data whatsoever. Everything stays on your device.</p>
+    </div>
+
+    <p>This policy describes how PowerReps handles your data. By using the app, you agree to the practices described below.</p>
+
+    <h2>1. Data Collected</h2>
+    <p>PowerReps is a <strong>fully offline</strong> application. It requires no account, no internet connection, and sends no data to any external server.</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Data Type</th>
+            <th>Storage</th>
+            <th>Transmitted</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Configured cycles and exercises</strong></td>
+            <td><span class="pill local">Local</span> AsyncStorage</td>
+            <td><span class="pill none">Never</span></td>
+          </tr>
+          <tr>
+            <td><strong>Daily progression (reps)</strong></td>
+            <td><span class="pill local">Local</span> AsyncStorage</td>
+            <td><span class="pill none">Never</span></td>
+          </tr>
+          <tr>
+            <td><strong>Preferences (language, settings)</strong></td>
+            <td><span class="pill local">Local</span> AsyncStorage</td>
+            <td><span class="pill none">Never</span></td>
+          </tr>
+          <tr>
+            <td><strong>Location data</strong></td>
+            <td colspan="2" style="color:var(--green)">Not collected</td>
+          </tr>
+          <tr>
+            <td><strong>Advertising identifiers</strong></td>
+            <td colspan="2" style="color:var(--green)">Not collected</td>
+          </tr>
+          <tr>
+            <td><strong>Account data / email</strong></td>
+            <td colspan="2" style="color:var(--green)">Not collected</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>2. Use of Data</h2>
+    <p>Locally stored data is used exclusively to:</p>
+    <ul>
+      <li>Display your progress and history within the app</li>
+      <li>Remember your cycles, folders and exercises between sessions</li>
+      <li>Retain your language and configuration preferences</li>
+    </ul>
+
+    <div class="highlight">
+      <p>📵 The app <strong>does not require an internet connection</strong> to work. No data is sent to our servers — we don't have any.</p>
+    </div>
+
+    <h2>3. Third-Party Services</h2>
+    <p>PowerReps integrates <strong>no third-party services</strong> for advertising, analytics, authentication or cloud sync. There is no dependency on Google Firebase, AdMob, Analytics or any other data-collection service.</p>
+
+    <h2>4. Security and Storage</h2>
+    <p>All your data is stored in your device's secure local storage via <code>AsyncStorage</code>, the standard React Native persistence library. The app does not access any other device resource (camera, contacts, microphone, GPS).</p>
+
+    <div class="highlight warn">
+      <p><strong>Important:</strong> Uninstalling the app will permanently delete all your data. We recommend making a backup before reinstalling.</p>
+    </div>
+
+    <h2>5. Your Rights (GDPR)</h2>
+    <p>In accordance with the General Data Protection Regulation (GDPR), you have full control over your data:</p>
+    <ul>
+      <li><strong>Access:</strong> all your data is visible directly within the app</li>
+      <li><strong>Erasure:</strong> uninstalling the app deletes all data</li>
+      <li><strong>Portability:</strong> data is stored in standard JSON format on your device</li>
+    </ul>
+    <p>Since no data is transmitted to our servers, it is not possible for us to access or modify your information from outside the app.</p>
+
+    <h2>6. Children</h2>
+    <p>Since PowerReps collects no personal data, the app can be safely used by people of any age without any data-protection concerns.</p>
+
+    <h2>7. Changes</h2>
+    <p>This policy may be updated occasionally. The last-updated date appears at the top of this page. Any significant changes will be communicated through the app's update notes.</p>
+
+    <div class="contact-box">
+      <div class="contact-icon">✉️</div>
+      <div>
+        <p><strong>Contact</strong></p>
+        <p style="margin:0;color:var(--muted2)">For any questions about this policy:<br>
+        <a href="mailto:happyjoy81.dev@gmail.com">happyjoy81.dev@gmail.com</a></p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    © 2026 PowerReps · All rights reserved / Tous droits réservés
+  </footer>
+
+</div>
+
+<script>
+  function setLang(lang) {
+    document.querySelectorAll('.doc').forEach(d => d.classList.remove('active'));
+    document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('doc-' + lang).classList.add('active');
+    event.target.classList.add('active');
+    document.documentElement.lang = lang;
+  }
+  // Auto-detect browser language
+  if (navigator.language.startsWith('fr')) {
+    // already French by default
+  } else {
+    const btn = document.querySelector('.lang-btn:last-child');
+    if(btn) btn.click();
+  }
+</script>
+</body>
+</html>
