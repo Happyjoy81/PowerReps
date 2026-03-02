@@ -362,11 +362,24 @@
       <p>📵 L'application <strong>ne nécessite pas de connexion internet</strong> pour fonctionner. Aucune donnée n'est envoyée à nos serveurs — nous n'en avons pas.</p>
     </div>
 
-    <h2>3. Services tiers</h2>
-    <p>PowerReps n'intègre <strong>aucun service tiers</strong> de publicité, d'analyse, d'authentification ou de synchronisation cloud. Il n'existe aucune dépendance à Google Firebase, AdMob, Analytics ou tout autre service de collecte de données.</p>
+    <h2>3. Services tiers — Google AdMob</h2>
+    <p>PowerReps affiche des publicités fournies par <strong>Google AdMob</strong>. Ce service tiers peut collecter et traiter les données suivantes sur votre appareil :</p>
+    <ul>
+      <li><strong>Identifiant publicitaire Android (GAID)</strong> — utilisé pour afficher des annonces pertinentes</li>
+      <li><strong>Données d'interaction avec les annonces</strong> — clics, impressions, pour mesurer la performance</li>
+      <li><strong>Données de diagnostic</strong> — pour la stabilité du SDK publicitaire</li>
+    </ul>
+    <div class="highlight warn">
+      <p>⚠️ Par défaut, PowerReps configure AdMob en mode <strong>annonces non personnalisées</strong> (<code>requestNonPersonalizedAdsOnly: true</code>), conformément au RGPD. Google reçoit tout de même un identifiant d'appareil anonyme à des fins de détection de fraude publicitaire.</p>
+    </div>
+    <p>Ces données sont traitées par Google conformément à la <a href="https://policies.google.com/privacy" style="color:var(--accent)">Politique de confidentialité de Google</a> et aux <a href="https://support.google.com/admob/answer/6128543" style="color:var(--accent)">règles AdMob</a>. PowerReps n'a pas accès à ces données et ne les reçoit pas.</p>
+    <div class="highlight" style="border-left-color:var(--green)">
+      <p>🔒 <strong>Chiffrement en transit :</strong> toutes les communications entre l'application et les serveurs de Google AdMob sont chiffrées via <strong>HTTPS/TLS</strong>. Aucune donnée publicitaire ne transite en clair sur le réseau.</p>
+    </div>
 
     <h2>4. Sécurité et stockage</h2>
-    <p>Toutes vos données sont stockées dans le stockage local sécurisé de votre appareil via <code>AsyncStorage</code>, la bibliothèque de persistance standard de React Native. L'application n'accède à aucune autre ressource de votre téléphone (caméra, contacts, microphone, géolocalisation).</p>
+    <p>Toutes vos données d'entraînement sont stockées dans le stockage local sécurisé de votre appareil via <code>AsyncStorage</code>. L'application n'accède à aucune autre ressource de votre téléphone (caméra, contacts, microphone, géolocalisation).</p>
+    <p>Les données échangées avec Google AdMob sont transmises exclusivement via <strong>HTTPS/TLS</strong>, conformément aux standards de sécurité Google.</p>
 
     <div class="highlight warn">
       <p><strong>Important :</strong> La désinstallation de l'application entraîne la suppression définitive de toutes vos données. Nous vous recommandons d'effectuer une sauvegarde avant toute réinstallation.</p>
@@ -480,10 +493,15 @@
     <div class="highlight warn">
       <p>⚠️ By default, PowerReps configures AdMob in <strong>non-personalized ads</strong> mode (<code>requestNonPersonalizedAdsOnly: true</code>), in compliance with GDPR. Google still receives an anonymous device identifier for ad fraud detection purposes.</p>
     </div>
-    <p>This data is processed by Google in accordance with the <a href="https://policies.google.com/privacy" style="color:var(--accent)">Google Privacy Policy</a> and <a href="https://support.google.com/admob/answer/6128543" style="color:var(--accent)">AdMob policies</a>. PowerReps does not have access to this data and does not receive it.
+    <p>This data is processed by Google in accordance with the <a href="https://policies.google.com/privacy" style="color:var(--accent)">Google Privacy Policy</a> and <a href="https://support.google.com/admob/answer/6128543" style="color:var(--accent)">AdMob policies</a>. PowerReps does not have access to this data and does not receive it.</p>
+
+    <div class="highlight" style="border-left-color:var(--green)">
+      <p>🔒 <strong>Encryption in transit:</strong> all communications between the app and Google AdMob servers are encrypted via <strong>HTTPS/TLS</strong>. No advertising data travels in plain text over the network.</p>
+    </div>
 
     <h2>4. Security and Storage</h2>
-    <p>All your data is stored in your device's secure local storage via <code>AsyncStorage</code>, the standard React Native persistence library. The app does not access any other device resource (camera, contacts, microphone, GPS).</p>
+    <p>All your training data is stored in your device's secure local storage via <code>AsyncStorage</code>. The app does not access any other device resource (camera, contacts, microphone, GPS).</p>
+    <p>Data exchanged with Google AdMob (advertising identifier, interactions) is transmitted exclusively via <strong>HTTPS/TLS</strong>, in line with Google's security standards.</p>
 
     <div class="highlight warn">
       <p><strong>Important:</strong> Uninstalling the app will permanently delete all your data. We recommend making a backup before reinstalling.</p>
