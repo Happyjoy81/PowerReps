@@ -291,11 +291,11 @@
 
   <!-- ══════════════════════════════════════════════════════ FRANÇAIS -->
   <div class="doc active" id="doc-fr">
-    <span class="updated">Dernière mise à jour : 1 mars 2026</span>
+    <span class="updated">Dernière mise à jour : 1 mars 2026 — v1.1 (AdMob)</span>
     <h1>Politique de confidentialité</h1>
 
     <div class="highlight">
-      <p><strong>Résumé en une phrase :</strong> PowerReps ne collecte, ne transmet et ne partage aucune donnée personnelle. Tout reste sur votre appareil.</p>
+      <p><strong>Résumé :</strong> PowerReps ne collecte aucune donnée personnelle <em>par elle-même</em>. L'application affiche des publicités via Google AdMob, qui peut collecter un identifiant publicitaire conformément à ses propres règles.</p>
     </div>
 
     <p>La présente politique décrit comment PowerReps traite vos données. En utilisant l'application, vous acceptez les pratiques décrites ci-dessous.</p>
@@ -333,8 +333,14 @@
             <td colspan="2" style="color:var(--green)">Non collectées</td>
           </tr>
           <tr>
-            <td><strong>Identifiants publicitaires</strong></td>
-            <td colspan="2" style="color:var(--green)">Non collectés</td>
+            <td><strong>Identifiant publicitaire (GAID)</strong></td>
+            <td><span class="pill" style="background:var(--purple)">AdMob</span> Google</td>
+            <td style="color:var(--accent)">Par Google AdMob</td>
+          </tr>
+          <tr>
+            <td><strong>Interactions avec les annonces</strong></td>
+            <td><span class="pill" style="background:var(--purple)">AdMob</span> Google</td>
+            <td style="color:var(--accent)">Par Google AdMob</td>
           </tr>
           <tr>
             <td><strong>Données de compte / email</strong></td>
@@ -376,7 +382,7 @@
     <p>Étant donné qu'aucune donnée n'est transmise à nos serveurs, il n'est pas possible pour nous d'accéder à vos informations ni de les modifier depuis l'extérieur.</p>
 
     <h2>6. Mineurs</h2>
-    <p>PowerReps ne collectant aucune donnée personnelle, l'application est utilisable par des personnes de tout âge sans risque lié à la protection des données.</p>
+    <p>PowerReps ne collecte aucune donnée personnelle par elle-même. Cependant, en raison de l'intégration d'AdMob, l'application n'est pas destinée aux enfants de moins de 13 ans. Si vous êtes parent et pensez que votre enfant a utilisé l'application, vous pouvez nous contacter.</p>
 
     <h2>7. Modifications</h2>
     <p>Cette politique peut être mise à jour occasionnellement. La date de dernière mise à jour figure en haut de cette page. Toute modification sera communiquée via la page de mise à jour de l'application.</p>
@@ -393,14 +399,14 @@
 
   <!-- ══════════════════════════════════════════════════════ ENGLISH -->
   <div class="doc" id="doc-en">
-    <span class="updated">Last updated: March 1, 2026</span>
+    <span class="updated">Last updated: March 1, 2026 — v1.1 (AdMob)</span>
     <h1>Privacy Policy</h1>
 
     <div class="highlight">
-      <p><strong>One-sentence summary:</strong> PowerReps collects, transmits and shares no personal data whatsoever. Everything stays on your device.</p>
+      <p><strong>Summary:</strong> PowerReps collects no personal data <em>on its own</em>. The app displays ads via Google AdMob, which may collect an advertising identifier under its own privacy policy.</p>
     </div>
 
-    <p>This policy describes how PowerReps handles your data. By using the app, you agree to the practices described below.</p>
+    <p>This policy describes how PowerReps handles your data, including data collected by the third-party advertising network Google AdMob. By using the app, you agree to the practices described below.</p>
 
     <h2>1. Data Collected</h2>
     <p>PowerReps is a <strong>fully offline</strong> application. It requires no account, no internet connection, and sends no data to any external server.</p>
@@ -435,8 +441,14 @@
             <td colspan="2" style="color:var(--green)">Not collected</td>
           </tr>
           <tr>
-            <td><strong>Advertising identifiers</strong></td>
-            <td colspan="2" style="color:var(--green)">Not collected</td>
+            <td><strong>Advertising ID (GAID)</strong></td>
+            <td><span class="pill" style="background:var(--purple)">AdMob</span> Google</td>
+            <td style="color:var(--accent)">By Google AdMob</td>
+          </tr>
+          <tr>
+            <td><strong>Ad interaction data</strong></td>
+            <td><span class="pill" style="background:var(--purple)">AdMob</span> Google</td>
+            <td style="color:var(--accent)">By Google AdMob</td>
           </tr>
           <tr>
             <td><strong>Account data / email</strong></td>
@@ -458,8 +470,17 @@
       <p>📵 The app <strong>does not require an internet connection</strong> to work. No data is sent to our servers — we don't have any.</p>
     </div>
 
-    <h2>3. Third-Party Services</h2>
-    <p>PowerReps integrates <strong>no third-party services</strong> for advertising, analytics, authentication or cloud sync. There is no dependency on Google Firebase, AdMob, Analytics or any other data-collection service.</p>
+    <h2>3. Third-Party Services — Google AdMob</h2>
+    <p>PowerReps displays ads provided by <strong>Google AdMob</strong>. This third-party service may collect and process the following data on your device:</p>
+    <ul>
+      <li><strong>Android Advertising ID (GAID)</strong> — used to display relevant ads</li>
+      <li><strong>Ad interaction data</strong> — clicks and impressions, to measure ad performance</li>
+      <li><strong>Diagnostic data</strong> — for advertising SDK stability</li>
+    </ul>
+    <div class="highlight warn">
+      <p>⚠️ By default, PowerReps configures AdMob in <strong>non-personalized ads</strong> mode (<code>requestNonPersonalizedAdsOnly: true</code>), in compliance with GDPR. Google still receives an anonymous device identifier for ad fraud detection purposes.</p>
+    </div>
+    <p>This data is processed by Google in accordance with the <a href="https://policies.google.com/privacy" style="color:var(--accent)">Google Privacy Policy</a> and <a href="https://support.google.com/admob/answer/6128543" style="color:var(--accent)">AdMob policies</a>. PowerReps does not have access to this data and does not receive it.
 
     <h2>4. Security and Storage</h2>
     <p>All your data is stored in your device's secure local storage via <code>AsyncStorage</code>, the standard React Native persistence library. The app does not access any other device resource (camera, contacts, microphone, GPS).</p>
@@ -478,7 +499,7 @@
     <p>Since no data is transmitted to our servers, it is not possible for us to access or modify your information from outside the app.</p>
 
     <h2>6. Children</h2>
-    <p>Since PowerReps collects no personal data, the app can be safely used by people of any age without any data-protection concerns.</p>
+    <p>PowerReps does not collect personal data on its own. However, due to the AdMob integration, the app is not intended for children under 13. If you are a parent and believe your child has used the app, please contact us.</p>
 
     <h2>7. Changes</h2>
     <p>This policy may be updated occasionally. The last-updated date appears at the top of this page. Any significant changes will be communicated through the app's update notes.</p>
@@ -499,7 +520,4 @@
 
 </div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-  function setLang(lang) {
-    document.querySelectorAll('.doc').forEach(d => d.classList.remove('active'));
-    document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+<script data-cfasync="false" sr
